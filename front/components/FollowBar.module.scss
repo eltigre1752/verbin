@@ -1,0 +1,25 @@
+#Follow {
+  padding-top: 1.5em;
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0em 2em;
+
+    span {
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+
+    svg {
+      font-size: 1.75rem;
+    }
+  }
+
+  #FollowedList {
+    padding-top: 10em;
+    text-align: center;
+    color: darken($color: white, $amount: 30);
+  }
+}

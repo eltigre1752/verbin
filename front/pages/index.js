@@ -1,12 +1,20 @@
-import Head from 'next/head';
+import Post from '../components/Post';
+import styles from './index.module.scss';
 
 export default function Home() {
   return (
-    <div>
-      <Head>
-        <title>Verbin</title>
-        <link rel='icon' href='/favicon.ico' />
-      </Head>
+    <div id={styles.Page}>
+      <div id={styles.ContentWrapper}>
+        <div id={styles.Content}>
+          {(() => {
+            let temp = [];
+            for (let i = 0; i < 10; i++) {
+              temp.push(<Post key={i} />);
+            }
+            return temp;
+          })()}
+        </div>
+      </div>
     </div>
   );
 }

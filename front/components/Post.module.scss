@@ -1,0 +1,223 @@
+@import '../styles//variables';
+
+.hidden {
+  display: none !important;
+}
+
+.flexContainer {
+  display: flex;
+  flex-direction: column;
+
+  .row {
+    flex-wrap: wrap;
+    display: flex;
+    flex: 0 0 3em;
+    padding: 0.25em 0.5em;
+  }
+
+  .col {
+    display: flex;
+    padding: 0.25em;
+  }
+}
+
+.post {
+  background-color: white;
+
+  width: 70%;
+  border-radius: 0.35em;
+  box-shadow: 0px 1px 2px;
+  margin-bottom: 3em;
+
+  .row {
+    .profileImg {
+      width: 48px;
+      height: 48px;
+      div {
+        background-color: black;
+        width: 100%;
+        height: 100%;
+        border-radius: 100em;
+      }
+    }
+
+    .username {
+      font-weight: 600;
+      align-items: center;
+    }
+
+    .music {
+      flex-grow: 1;
+      justify-content: center;
+
+      audio {
+        width: 80%;
+        border-radius: 0.25em;
+      }
+    }
+  }
+
+  .postBody {
+    color: darken($color: $text, $amount: 15);
+    font-size: 1.1rem;
+  }
+
+  .interactButtons {
+    margin-top: 2em;
+    justify-content: flex-end;
+
+    button {
+      border: none;
+      background-color: transparent;
+      width: 3em;
+      height: 3em;
+      border-radius: 0.25em;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      svg {
+        flex: 0 0 100%;
+        font-size: 1.5rem;
+      }
+    }
+
+    & > div:nth-child(1) button {
+      svg {
+        // color: crimson;
+        pointer-events: none;
+        transition: 0.2s;
+      }
+
+      &:hover {
+        svg {
+          color: lighten($color: crimson, $amount: 10);
+        }
+      }
+
+      &.clicked {
+        svg {
+          color: crimson;
+        }
+      }
+    }
+
+    & > div:nth-child(2) button {
+      svg {
+        pointer-events: none;
+        transition: 0.2s;
+      }
+
+      &:hover {
+        svg {
+          color: lighten($color: dodgerblue, $amount: 5);
+        }
+      }
+
+      &.clicked svg {
+        color: darken($color: dodgerblue, $amount: 5);
+      }
+    }
+
+    & > div:nth-child(3) button {
+      svg {
+        pointer-events: none;
+        transition: 0.2s;
+      }
+
+      &:hover {
+        svg {
+          color: lighten($color: coral, $amount: 8);
+        }
+      }
+    }
+  }
+
+  .comments {
+    display: flex;
+  }
+}
+
+.report {
+  position: absolute;
+  top: 0px;
+  z-index: 100;
+
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba($color: #000000, $alpha: 0.5);
+
+  & > div {
+    align-items: center;
+    padding-top: 15em;
+    form {
+      background-color: lighten($color: black, $amount: 20);
+      padding: 1em 1.5em;
+      color: white;
+      border-radius: 0.25em;
+
+      & > div {
+        margin-bottom: 1em;
+      }
+
+      label {
+        margin-left: 1em;
+      }
+    }
+  }
+
+  .submitReport {
+    margin-top: 1.5em;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+  }
+
+  input {
+    cursor: pointer;
+  }
+
+  input[type='submit'] {
+    background-color: transparent;
+    color: white;
+    border: none;
+    width: 6em;
+    height: 2em;
+    transition: 0.2s;
+
+    &:hover {
+      background-color: darken($color: white, $amount: 70);
+    }
+  }
+}
+
+#CommentSection {
+  margin: 1em;
+  width: 100%;
+  font-size: 0.85rem;
+
+  .row {
+    align-items: center;
+
+    .col:nth-of-type(1) {
+      width: 32px;
+      height: 32px;
+      div {
+        background-color: black;
+        width: 100%;
+        height: 100%;
+        border-radius: 10em;
+      }
+    }
+
+    .col:nth-last-of-type(1) {
+      padding-left: 1em;
+    }
+  }
+
+  .row:nth-last-of-type(1) {
+    padding-left: 4em;
+    color: lighten($color: black, $amount: 20);
+  }
+}

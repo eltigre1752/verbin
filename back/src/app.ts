@@ -6,6 +6,7 @@ import sessionManager from './services/sessionManager';
 import { Message } from './_types';
 import { AuthRouter } from './routers/auth';
 import { PostRouter } from './routers/post';
+import { AudioRouter } from './routers/audio';
 
 const app = express();
 
@@ -17,6 +18,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use('/auth', AuthRouter);
 app.use('/post', PostRouter);
+app.use('/audio', AudioRouter);
 
 app.get('/', (_, res, next) => {
   res.locals.msg = new Message(200, { message: 'Hello' });

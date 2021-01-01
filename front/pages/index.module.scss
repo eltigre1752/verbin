@@ -1,0 +1,23 @@
+@import '../styles/variables';
+
+$side_bar_width: 20em;
+
+#Page {
+  display: flex;
+
+  & > div {
+    padding: 4em 0em;
+  }
+
+  #ContentWrapper {
+    width: 100%;
+    padding-left: $side_bar_width + 5em;
+    padding-right: $side_bar_width + 5em;
+
+    #Content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+}

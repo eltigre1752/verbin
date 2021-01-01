@@ -1,0 +1,70 @@
+@import '../styles/variables';
+
+#SideBar {
+  padding-top: 1em;
+
+  hr {
+    margin: 0em 2em;
+    margin-top: 0.5em;
+    margin-bottom: 1em;
+  }
+
+  .sideOption {
+    padding: 0em 2em;
+    button {
+      height: 3.5em;
+      width: 100%;
+      border: none;
+      border-radius: 1em;
+      background-color: transparent;
+      color: $text;
+
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      transition: 0.3s;
+
+      svg {
+        font-size: 1.5rem;
+        flex: 0 0 35%;
+      }
+
+      span {
+        padding-top: 0.25em;
+        font-size: 1.1rem;
+        font-weight: 600;
+        flex: 1 0 auto;
+        text-align: left;
+      }
+
+      &:hover {
+        background-color: darken($color: white, $amount: 20);
+        color: black;
+      }
+    }
+  }
+
+  #AddPostButton {
+    display: flex;
+    justify-content: center;
+    padding: 0em 3em;
+
+    button {
+      background-color: transparent;
+      width: 100%;
+      height: 2em;
+      border-radius: 1em;
+      border: none;
+      font-size: 1.1rem;
+      transition: 0.3s;
+
+      &:hover {
+        background-color: darken($color: white, $amount: 20);
+      }
+    }
+
+    svg {
+      font-size: 2rem;
+    }
+  }
+}
