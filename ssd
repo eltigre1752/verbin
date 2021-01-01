@@ -1,0 +1,126 @@
+[33mcommit 22b386edda0a05cc8993e356a968a9f5699cda89[m[33m ([m[1;31morigin/van[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m)[m
+Author: Isaac Clank <minimaleffort769@gmail.com>
+Date:   Fri Jan 1 11:21:16 2021 +0700
+
+    Fix: missing stylesheet
+
+[1mdiff --git a/front/components/NavBar.js b/front/components/NavBar.js[m
+[1mnew file mode 100644[m
+[1mindex 0000000..dc10e62[m
+[1m--- /dev/null[m
+[1m+++ b/front/components/NavBar.js[m
+[36m@@ -0,0 +1,29 @@[m
+[32m+[m[32mimport styles from './NavBar.module.scss';[m
+[32m+[m
+[32m+[m[32mconst SearchBar = () => {[m
+[32m+[m[32m  return ([m
+[32m+[m[32m    <form>[m
+[32m+[m[32m      <input type='text' />[m
+[32m+[m[32m    </form>[m
+[32m+[m[32m  );[m
+[32m+[m[32m};[m
+[32m+[m
+[32m+[m[32mconst NavBar = () => {[m
+[32m+[m[32m  return ([m
+[32m+[m[32m    <div id={styles.NavBar}>[m
+[32m+[m[32m      <div id={styles.Brand}>verbin</div>[m
+[32m+[m[32m      <div id={styles.NavButtons}>[m
+[32m+[m[32m        <button>home</button>[m
+[32m+[m[32m        <button>hot</button>[m
+[32m+[m[32m        <button>listen</button>[m
+[32m+[m[32m      </div>[m
+[32m+[m[32m      <div>[m
+[32m+[m[32m        <SearchBar />[m
+[32m+[m[32m      </div>[m
+[32m+[m[32m      <div id={styles.NavUserButton}>[m
+[32m+[m[32m        <button>User</button>[m
+[32m+[m[32m      </div>[m
+[32m+[m[32m    </div>[m
+[32m+[m[32m  );[m
+[32m+[m[32m};[m
+[32m+[m[32mexport default NavBar;[m
+[1mdiff --git a/front/components/NavBar.module.scss b/front/components/NavBar.module.scss[m
+[1mnew file mode 100644[m
+[1mindex 0000000..f7a26b6[m
+[1m--- /dev/null[m
+[1m+++ b/front/components/NavBar.module.scss[m
+[36m@@ -0,0 +1,3 @@[m
+[32m+[m[32m#NavBar {[m
+[32m+[m[32m  display: flex;[m
+[32m+[m[32m}[m
+[1mdiff --git a/front/package.json b/front/package.json[m
+[1mindex 876909e..d1455c9 100644[m
+[1m--- a/front/package.json[m
+[1m+++ b/front/package.json[m
+[36m@@ -11,6 +11,7 @@[m
+   "dependencies": {[m
+     "next": "10.0.4",[m
+     "react": "17.0.1",[m
+[31m-    "react-dom": "17.0.1"[m
+[32m+[m[32m    "react-dom": "17.0.1",[m
+[32m+[m[32m    "sass": "^1.32.0"[m
+   }[m
+ }[m
+[1mdiff --git a/front/pages/_app.js b/front/pages/_app.js[m
+[1mindex 1e1cec9..18dc597 100644[m
+[1m--- a/front/pages/_app.js[m
+[1m+++ b/front/pages/_app.js[m
+[36m@@ -1,7 +1,14 @@[m
+[31m-import '../styles/globals.css'[m
+[32m+[m[32mimport NavBar from '../components/NavBar';[m
+[32m+[m
+[32m+[m[32mimport '../styles/global.scss';[m
+ [m
+ function MyApp({ Component, pageProps }) {[m
+[31m-  return <Component {...pageProps} />[m
+[32m+[m[32m  return ([m
+[32m+[m[32m    <div>[m
+[32m+[m[32m      <NavBar />[m
+[32m+[m[32m      <Component {...pageProps} />[m
+[32m+[m[32m    </div>[m
+[32m+[m[32m  );[m
+ }[m
+ [m
+[31m-export default MyApp[m
+[32m+[m[32mexport default MyApp;[m
+[1mdiff --git a/front/styles/global.scss b/front/styles/global.scss[m
+[1mnew file mode 100644[m
+[1mindex 0000000..95c3429[m
+[1m--- /dev/null[m
+[1m+++ b/front/styles/global.scss[m
+[36m@@ -0,0 +1,8 @@[m
+[32m+[m[32mbody {[m
+[32m+[m[32m  margin-top: 0em;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32mbutton {[m
+[32m+[m[32m  cursor: pointer;[m
+[32m+[m[32m  outline: none;[m
+[32m+[m[32m}[m
+[1mdiff --git a/front/yarn.lock b/front/yarn.lock[m
+[1mindex 4dde805..0c168ab 100644[m
+[1m--- a/front/yarn.lock[m
+[1m+++ b/front/yarn.lock[m
+[36m@@ -801,7 +801,7 @@[m [mchalk@4.0.0:[m
+     ansi-styles "^4.1.0"[m
+     supports-color "^7.1.0"[m
+ [m
+[31m-chokidar@3.4.3, chokidar@^3.4.1:[m
+[32m+[m[32mchokidar@3.4.3, "chokidar@>=2.0.0 <4.0.0", chokidar@^3.4.1:[m
+   version "3.4.3"[m
+   resolved "https://registry.yarnpkg.com/chokidar/-/chokidar-3.4.3.tgz#c1df38231448e45ca4ac588e6c79573ba6a57d5b"[m
+   integrity sha512-DtM3g7juCXQxFVSNPNByEC2+NImtBuxQQvWlHunpJIS5Ocr0lG306cC7FCi7cEA0fzmybPUIl4txBIobk1gGOQ==[m
+[36m@@ -3173,6 +3173,13 @@[m [msass-loader@10.0.5:[m
+     schema-utils "^3.0.0"[m
+     semver "^7.3.2"[m
+ [m
+[32m+[m[32msass@^1.32.0:[m
+[32m+[m[32m  version "1.32.0"[m
+[32m+[m[32m  resolved "https://registry.yarnpkg.com/sass/-/sass-1.32.0.tgz#10101a026c13080b14e2b374d4e15ee24400a4d3"[m
+[32m+[m[32m  integrity sha512-fhyqEbMIycQA4blrz/C0pYhv2o4x2y6FYYAH0CshBw3DXh5D5wyERgxw0ptdau1orc/GhNrhF7DFN2etyOCEng==[m
+[32m+[m[32m  dependencies:[m
+[32m+[m[32m    chokidar ">=2.0.0 <4.0.0"[m
+[32m+[m
+ scheduler@^0.20.1:[m
+   version "0.20.1"[m
+   resolved "https://registry.yarnpkg.com/scheduler/-/scheduler-0.20.1.tgz#da0b907e24026b01181ecbc75efdc7f27b5a000c"[m

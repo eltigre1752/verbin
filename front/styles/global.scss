@@ -1,7 +1,10 @@
-body {
-  margin-top: 0em;
+* {
+  box-sizing: border-box;
+  font-size: 16px;
 }
-
+body {
+  margin: 0em;
+}
 button {
   cursor: pointer;
   outline: none;

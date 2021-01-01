@@ -1,0 +1,90 @@
+#Login {
+  display: flex;
+  justify-content: center;
+  margin-top: 7em;
+}
+.container {
+  display: grid;
+  width: 60em;
+  height: 40em;
+  grid-template: 1fr / 1fr 1fr;
+  grid-gap: 1em 1em;
+  align-items: center;
+
+  h1 {
+    font-size: 5em;
+    color: #9e6adc;
+  }
+
+  h2 {
+    font-size: 2em;
+    display: inline;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+  }
+
+  #BigFontSize {
+    font-size: 2em;
+  }
+  #MediumFontSize {
+    font-size: 1.5em;
+    text-align: center;
+  }
+  button {
+    justify-self: center;
+    background-color: transparent;
+    border-radius: 2em;
+    border: none;
+  }
+
+  input {
+    outline: none;
+    border: 0.9px solid gray;
+    border-radius: 2em;
+    padding: 0.3em 1em;
+    width: 100%;
+    font-size: smaller;
+    box-shadow: 0.5px 0.2px 2px;
+  }
+  .signinGrid {
+    display: grid;
+    height: 60%;
+    background-color: lightskyblue;
+    grid-template: 1fr 1fr 1fr 1fr 1fr / 1fr;
+    padding: 2em;
+    border-radius: 5%;
+    grid-gap: 1em;
+    box-shadow: 2px 0px 5px;
+
+    #SigninButton {
+      background-color: #9e6adc;
+      color: white;
+      width: 50%;
+    }
+    #SigninLink {
+      text-decoration: none;
+      font-size: 0.9em;
+    }
+  }
+
+  .signupGrid {
+    display: grid;
+    background-color: lightskyblue;
+    border-radius: 5%;
+    padding: 2em;
+    grid-gap: 1em;
+    height: 95%;
+    box-shadow: 2px 0px 5px;
+
+    #SignupButton {
+      background-color: #136f63;
+      color: white;
+      width: 50%;
+    }
+    #SignupLink {
+      text-decoration: none;
+      font-size: 0.9em;
+    }
+  }
+}
