@@ -42,7 +42,7 @@ export const signin = (user: User, callback: Handler) => {
       'SELECT email,name,verified,account_status,password FROM accounts WHERE email=?',
       [user.email],
       (err, acc) => {
-        if (err) callback(new Message(400, { error: 'no matching email' }));
+        if (err || !acc) callback(new Message(400, { error: 'no matching email' }));
         else if (!checkPassword(acc.password, user.password))
           callback(new Message(400, { error: 'wrong password' }));
         else

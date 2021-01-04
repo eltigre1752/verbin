@@ -35,24 +35,25 @@
 
   #NavButtons {
     display: flex;
-    button {
+    button.navButtons {
       background-color: transparent;
       border: none;
       border-radius: 50%;
       padding: 0.7em;
       margin: 0em 0.3em;
       display: flex;
-      transition: background-color 0.3s, box-shadow 0.05s;
+      transition: background-color 0.2s, box-shadow 0.1s;
       transition-timing-function: ease-in;
+
       svg {
         font-size: 1.35em;
       }
-    }
 
-    button:hover {
-      background-color: darken($color: white, $amount: 5);
-      color: $base-2;
-      box-shadow: 1px 1px 2px;
+      &:hover {
+        background-color: darken($color: white, $amount: 5);
+        color: $base-2;
+        box-shadow: 1px 1px 2px;
+      }
     }
   }
 }
@@ -84,4 +85,49 @@
     background-color: transparent;
     border: none;
   }
+}
+
+#AuthenticatedButton {
+  position: relative;
+
+  .navButtons.open {
+    background-color: darken($color: white, $amount: 10) !important;
+    color: $base-2;
+    box-shadow: 1px 1px 2px;
+    border-radius: 0px !important;
+  }
+
+  #ProfileDropdown {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    transform: translate(-1%, 100%);
+
+    div {
+      background-color: rgba($color: darken(white, 10), $alpha: 0.6);
+      width: 10em;
+      border-radius: 0.15em;
+      color: white;
+      box-shadow: 0px 1px 3px $base-2 !important;
+      padding: 0.15em 0em;
+
+      button {
+        width: 100%;
+        height: 2.5em;
+        background-color: transparent;
+        border: none;
+        transition: 0.2s;
+        font-size: 1.05rem;
+        font-weight: 700;
+
+        &:hover {
+          background-color: darken($color: white, $amount: 10);
+        }
+      }
+    }
+  }
+}
+
+.hidden {
+  display: none;
 }

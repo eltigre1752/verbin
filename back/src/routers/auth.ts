@@ -8,9 +8,7 @@ const parseUserAuthentication = (req: Request, res: Response, next: NextFunction
     res.locals.user = {
       email: req.body.email,
       name: req.body.name,
-      address: req.body.address,
       password: req.body.password,
-      phone: req.body.phone,
     };
   }
   return next();

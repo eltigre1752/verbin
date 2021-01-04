@@ -8,21 +8,23 @@ body {
   margin: 0em;
   color: $text;
   font-size: 16px;
-  font-family: 'Open Sans', sans-serif;
-  height: 100vh;
+  font-family: 'Open Sans', sans-serif !important;
+  min-height: 100vh;
 }
-button {
+
+button,
+input[type='submit'] {
   cursor: pointer;
   outline: none;
 }
 
 #__next {
-  height: 100%;
+  min-height: 100%;
 }
 
 #App {
   $side_bar_width: 20em;
-  height: 100%;
+  min-height: 100%;
   background-color: $base-1;
   position: relative;
 

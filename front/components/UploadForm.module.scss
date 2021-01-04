@@ -1,0 +1,67 @@
+@import '../styles/variables';
+
+.hidden {
+  display: none;
+}
+
+#UploadForm {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+
+  width: 100vw;
+  height: 100vh;
+  padding-top: 15em;
+
+  color: white;
+  background-color: rgba($color: #000000, $alpha: 0.5);
+
+  form {
+    margin: 0em 45em;
+    padding: 1em 1.5em;
+
+    border-radius: 0.3em;
+    background-color: white;
+
+    #PostOption {
+      display: flex;
+      justify-content: flex-start;
+      margin-top: 0.25em;
+      margin-bottom: 0.5em;
+    }
+
+    #Body {
+      display: flex;
+      justify-content: center;
+
+      textarea {
+        appearance: none;
+        border: none;
+        width: 100%;
+        height: 10em;
+        resize: none;
+        font-size: 1.2rem;
+        padding: 1em 0.25em;
+      }
+    }
+
+    #Submit {
+      display: flex;
+      justify-content: center;
+
+      input {
+        width: 100%;
+        height: 2.5em;
+        font-size: 1.1rem;
+        background-color: darken($color: $base-1, $amount: 10);
+        border-radius: 0.25em;
+        border: none;
+        transition: 0.3s;
+
+        &:hover {
+          background-color: darken($color: $base-1, $amount: 20);
+        }
+      }
+    }
+  }
+}

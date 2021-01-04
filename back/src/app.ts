@@ -2,6 +2,7 @@ import express from 'express';
 import compression from 'compression';
 import fileupload from 'express-fileupload';
 import cors from './services/cors';
+import c from 'cors';
 import sessionManager from './services/sessionManager';
 import { Message } from './_types';
 import { AuthRouter } from './routers/auth';
@@ -16,6 +17,7 @@ app.use(cors);
 app.use(sessionManager);
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+
 app.use('/auth', AuthRouter);
 app.use('/post', PostRouter);
 app.use('/audio', AudioRouter);

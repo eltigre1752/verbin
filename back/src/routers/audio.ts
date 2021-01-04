@@ -9,8 +9,9 @@ router.get('/:id', (req, res, next) => {
   const stat = fs.statSync(fp);
 
   res.writeHead(200, {
-    'Content-Type': 'audio.mpeg',
+    'Content-Type': 'audio/mpeg',
     'Content-Length': stat.size,
+    'Content-Disposition': 'filename="music.mp3"',
   });
 
   const readStream = fs.createReadStream(fp);

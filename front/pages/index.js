@@ -8,7 +8,7 @@ export default function Home() {
         <div id={styles.Content}>
           {(() => {
             let temp = [];
-            for (let i = 0; i < 10; i++) {
+            for (let i = 0; i < 3; i++) {
               temp.push(<Post key={i} />);
             }
             return temp;

@@ -11,6 +11,7 @@
 
   .sideOption {
     padding: 0em 2em;
+
     button {
       height: 3.5em;
       width: 100%;
@@ -40,6 +41,14 @@
       &:hover {
         background-color: darken($color: white, $amount: 20);
         color: black;
+      }
+    }
+
+    &.selected {
+      color: $base-3 !important;
+
+      button {
+        color: inherit;
       }
     }
   }
