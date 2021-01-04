@@ -1,9 +1,17 @@
 import styles from './NavBar.module.scss';
+import Image from 'next/image';
+import { FaSearch, FaUser } from 'react-icons/fa';
+import { IoMdNotifications } from 'react-icons/io';
+import { AiFillSetting } from 'react-icons/ai';
+import Link from 'next/link';
 
 const SearchBar = () => {
   return (
-    <form>
-      <input type='text' placeholder='lkajsdlk' />
+    <form id={styles.SearchBar}>
+      <button>
+        <FaSearch />
+      </button>
+      <input type='text' />
     </form>
   );
 };
@@ -11,12 +19,24 @@ const SearchBar = () => {
 const NavBar = () => {
   return (
     <div id={styles.NavBar}>
-      <div id={styles.Brand}>verbin</div>
-      <div>
-        <SearchBar />
+      <div id={styles.Brand}>
+        <Link href='/'>
+          <Image src='/assets/VERBIN.png' width={100} height={35} />
+        </Link>
       </div>
-      <div id={styles.NavUserButton}>
-        <button>User</button>
+      <SearchBar />
+      <div id={styles.NavButtons}>
+        <Link href='/authentication'>
+          <button>
+            <FaUser />
+          </button>
+        </Link>
+        <button>
+          <IoMdNotifications />
+        </button>
+        <button>
+          <AiFillSetting />
+        </button>
       </div>
     </div>
   );
