@@ -15,6 +15,24 @@
     padding: 0.3em 0.5em;
   }
 
+  #Brand {
+    button {
+      display: flex;
+      align-items: center;
+      background-color: transparent;
+      border: none;
+      border-style: none;
+      box-shadow: none;
+      outline: none;
+      span {
+        margin-left: 0.3em;
+        font-size: 1.75rem;
+        font-weight: 700;
+        color: darken($color: $base-3, $amount: 10);
+      }
+    }
+  }
+
   #NavButtons {
     display: flex;
     button {

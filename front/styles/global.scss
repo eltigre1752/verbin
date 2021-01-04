@@ -24,6 +24,7 @@ button {
   $side_bar_width: 20em;
   height: 100%;
   background-color: $base-1;
+  position: relative;
 
   #SideWrapper {
     padding-top: 3em;

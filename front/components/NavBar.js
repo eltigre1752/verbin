@@ -21,7 +21,10 @@ const NavBar = () => {
     <div id={styles.NavBar}>
       <div id={styles.Brand}>
         <Link href='/'>
-          <Image src='/assets/VERBIN.png' width={100} height={35} />
+          <button>
+            <Image src='/assets/VERBIN.png' width='48' height='40' />
+            <span>Verbin</span>
+          </button>
         </Link>
       </div>
       <SearchBar />
