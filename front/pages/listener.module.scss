@@ -1,0 +1,97 @@
+#MusicsPlayer {
+  color: transparent;
+}
+
+.container {
+  padding: 5em 25em;
+
+  .songContainer {
+    box-shadow: 1px 1px 5px;
+    background-color: #f1f3f4;
+
+    .songImage {
+      display: flex;
+    }
+
+    .songInfo {
+      padding: 0 2em;
+      display: flex;
+      flex-direction: column;
+    }
+
+    #Player {
+      width: 100%;
+      color: black;
+      background-color: #f1f3f4;
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+
+  .userInfo {
+    margin-top: 0.2em;
+    padding: 2em 0 0 1em;
+    display: flex;
+
+    h3 {
+      padding-left: 1em;
+    }
+  }
+
+  #UserImage {
+    border-radius: 50%;
+  }
+
+  #UserPost {
+    display: flex;
+    padding: 0 6em;
+  }
+
+  .userComments {
+    padding-top: 3em;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+    form {
+      display: flex;
+      flex-direction: column;
+
+      & > div:nth-child(1) {
+        display: flex;
+        flex-direction: row;
+        padding-left: 1em;
+        justify-content: space-between;
+      }
+
+      input {
+        margin-top: 1em;
+        margin-left: 7em;
+        width: 7em;
+        height: 2em;
+        background-color: #ce4257;
+        color: white;
+        box-shadow: 1px 1px 5px;
+      }
+    }
+  }
+  .commentSection {
+    display: flex;
+    flex-direction: column;
+    margin-top: 5em;
+    p {
+      padding-left: 6em;
+      margin-top: 0;
+    }
+    & > div {
+      display: flex;
+      flex-direction: row;
+      margin: 3em 0 0 1em;
+      h4 {
+        margin-left: 1em;
+      }
+    }
+  }
+}
