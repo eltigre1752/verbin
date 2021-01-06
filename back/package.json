@@ -29,6 +29,6 @@
   },
   "scripts": {
     "clean": "rm -rf dist node_modules",
-    "dev": "yarn run tsc -w & yarn run nodemon -r dotenv/config ./dist/server.js"
+    "dev": "yarn run nodemon -r dotenv/config ./dist/server.js"
   }
 }
